@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<nav class="navbar">
+    <div class="container">
+        <img class="navbar-brand" src="assets/images/NBHD.png" routerLink="/" alt="">
+        <div class="mx-auto"></div>
+        <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="effect effect-1" href="/">Atrás</a>
+        </li>
+        </ul>
+    </div>
+</nav>
+
+
+<h1 class="ppal"> Inmuebles en {{localidad}} </h1>
+
+<div>
+  <div class="row ">
+      <div class="col-auto col-md-10 ">
+          <nav aria-label="breadcrumb" class="second" >
+              <ol class="breadcrumb px-md-4 bread-container">
+                  <li class="breadcrumb-item"><p class="breadcrumb-p"><i class="fa fa-angle-double-right " aria-hidden="true"></i><span> Localidad</span></p></li>
+              </ol>
+          </nav>
+      </div>
+  </div>
+</div>
+
+<div class="container-odio">
+  <div class="card card-center {{estilo}}">
+    <div class="card-body">
+      <div class="stars">
+        <i class="{{icono}}" style='font-size:50px;'></i>
+        <p class="num-odio">{{odio}}<button (click)="openPopup()" class="btn btn-info btn-circle m-1" style='font-size:12px;'><i class="fa fa-info"></i></button></p>
+      </div>
+      <h4 class="">Odio  &#8594;  {{num_odio}}</h4>
+    </div>
+  </div>
+</div>
+<div class="container-cards">
+  <div *ngFor="let inmueble of lista_inmuebles;" class="container" [routerLink]="['/inmuebles', inmueble.id]">
+    <div class="row pt-5 m-auto">
+      <div class="col-md-12 col-lg-12 pb-12">
+        <div class="card card-custom bg-white border-white border-0">
+          <div class="card-custom-avatar">
+            <img class="inmueble-image" src={{inmueble.imagenes[0]}} alt="Avatar" />
+          </div> 
+          <div class="card-body" style="overflow-y: auto">
+            <h2 class="card-title">{{inmueble.nombre}}</h2>
+            <p class="card-title">{{inmueble.precio}}</p>
+            <p class="card-text descripcion">{{inmueble.descripcion}}</p>
+          </div>
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+            <a class="tlf-button btn btn-primary">{{inmueble.telefono}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+	  <div class="modal-content">
+	  <div class="modal-header">
+      <h3 class="modal-title">NBHD Informa</h3>
+    </div>
+    <div class="modal-body">
+      <ul>
+        <li>Se considera un buen odio si es menor de 80 sobre 100 en nuestra escala y malo si lo supera.</li>
+        <li>Esta media se ha establecido conforme a múltiples datos extraídos de otras localizaciones aplicando técnicas de Inteligencia Artificial y Machine Learning.</li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn modal-btn"
+          (click)="closePopup()">
+      Cerrar
+      </button>
+    </div>
+    </div>
+  </div>
+</div>

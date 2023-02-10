@@ -1,0 +1,212 @@
+$blue: #34548B;
+$light-blue: #A1B5D0;
+$red: #F36F61;
+$light-green: #BED442;
+$green: #83CB53;
+$black: black;
+$white: white;
+
+.card-header{
+  background-color: $blue;
+  font-size: 25px;
+  color: $white;
+  letter-spacing: 2px;
+  
+  
+}
+
+.card-title{
+  font-size: 18px;
+  color: $black;
+
+}
+
+.navbar{
+  background-color: $blue;
+  margin-bottom: 50px;
+}
+.effect {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  background-color: $light-green;
+  color: white;
+  font-size: 16px;
+  padding: 10px 0px;
+  width: 150px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.effect.effect-1 {
+  transition: all 0.2s linear 0s;
+  
+  &:before {
+    content: "\f061";
+    font-family: FontAwesome;
+    font-size: 15px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    height: 100%;
+    width: 40px;
+    transition: all 0.2s linear 0s;
+  }
+  
+  &:hover {
+    text-indent: -20px;
+    
+    &:before {
+      opacity: 1;
+      text-indent: 0px;
+    }
+  }
+}
+
+.navbar-brand{
+  border-radius: 50%;
+  background-color: white;
+  width: 80px;
+  height: 80px;
+  margin: 10px 10px;
+}
+
+.main-header {
+  height: 400px;
+  background-image: url('../../../assets/images/questions-to-ask-neighborhoods-OG.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.btn-circle {
+  background-color: $light-green;
+  border-color: $light-green;
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+  text-align: center;
+  padding: 0;
+  border-radius: 50%;
+}
+.btn-circle:hover {
+  background-color: $green;
+  border-color: $green;
+}
+.fade-in-image {
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+  }
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+.contenedor_h1{
+    & h1 {
+        margin: 2%;
+        font-size: 5vh;
+        text-align: center;
+        letter-spacing: 3px;
+        color: white;
+        font-weight: bold;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+}
+@media only screen and (max-width: 600px){
+
+    .contenedor_img{
+        margin: 3% 25%;
+        width: 50%;
+        & img {
+            width: 100%;
+        }
+    }
+    .contenedor_h1{
+      & h1 {
+        font-size: 5vw;
+      }
+    }
+
+    .contenedor_buscador{
+      height: 53px;
+        & .contenedor_tipo{
+            width: 30%;
+            height: 100%;
+        }
+
+        & .contenedor_buscar{
+            width: 70%;
+            height: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 481px){
+
+    .contenedor_buscador{
+        margin: 0 10%;
+        width: 80%;
+        height: 53px;
+        & .contenedor_tipo{
+            width: 30%;
+            height: 100%;
+        }
+
+        & .contenedor_buscar{
+            width: 70%;
+            height: 100%;
+        }
+    }
+  }
+
+.btn-home{
+  color: white;
+  background-color: $light-green;
+}
+
+.btn-home:hover{
+  background-color: $green;
+}
+
+.modal-header{
+  background-color: $green;
+}
+.modal-title{
+  color: white;
+}
+.modal-btn{
+  color: white;
+  background-color: $green;
+  border-color: $green;
+}
+.modal-btn:hover{
+  background-color: $light-green;
+  border-color: $light-green;
+}
